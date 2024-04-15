@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const projects = [
   {
@@ -32,11 +32,20 @@ const projects = [
 ];
 
 const Card = ({ project }) => {
+  const [showDetails, setShowDetails] = useState(false);
+
+  const toggleDetails = () => {
+    setShowDetails(!showDetails);
+  };
+
   return (
     <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mb-4">
-      {/* Added mb-4 class for margin-bottom */}
       <a href={project.link}>
-        <img className="rounded-t-lg" src={project.imageUrl} alt="" />
+        <img
+          className="rounded-t-lg h-40 w-full object-cover"
+          src={project.imageUrl}
+          alt=""
+        />
       </a>
       <div className="p-5">
         <a href={project.link}>
@@ -45,29 +54,16 @@ const Card = ({ project }) => {
           </h5>
         </a>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-          {project.description}
+          {showDetails
+            ? project.description
+            : project.description.slice(0, 50) + "..."}
         </p>
-        <a
-          href={project.link}
+        <button
+          onClick={toggleDetails}
           className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
-          Read more
-          <svg
-            className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"
-            />
-          </svg>
-        </a>
+          {showDetails ? "Show Less" : "Show More"}
+        </button>
       </div>
     </div>
   );
@@ -76,7 +72,6 @@ const Card = ({ project }) => {
 const ProjectList = () => {
   return (
     <div className="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-6">
-      {/* Added gap-4, md:gap-8, lg:gap-12 classes for gap between cards */}
       {projects.map((project) => (
         <Card key={project.id} project={project} />
       ))}

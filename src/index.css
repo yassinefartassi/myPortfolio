@@ -8,8 +8,11 @@
 
 body {
   background-color: black;
+  scroll-behavior: smooth;
 }
-
+::-webkit-scrollbar {
+  display: none;
+}
 .bg-primary-color {
   @apply bg-gradient-to-r from-orange-400 to-pink-600  inline-block;
 }
