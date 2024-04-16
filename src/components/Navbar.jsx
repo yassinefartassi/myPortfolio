@@ -16,13 +16,13 @@ const Navbar = () => {
         </h1>
         <ul className="hidden md:flex">
           <li className="p-5">
-            <a href=""> about</a>{" "}
+            <a href="#about"> about</a>{" "}
           </li>
           <li className="p-5">
-            <a href=""> work</a>
+            <a href="#projects"> work</a>
           </li>
           <li className="p-5">
-            <a href=""> contact</a>
+            <a href="#contact"> contact</a>
           </li>
         </ul>
         <div onClick={handleNav} className="block md:hidden mr-6">
@@ -38,13 +38,13 @@ const Navbar = () => {
           <h1 className="text-3xl primary-color ml-4">Yassine Fartassi</h1>
           <ul className="p-8 text-2xl">
             <li className="p-2">
-              <a href=""> about</a>
+              <a href="#about"> about</a>
             </li>
             <li className="p-2">
-              <a href=""> work</a>
+              <a href="#projects"> work</a>
             </li>
             <li className="p-2">
-              <a href=""> contact</a>
+              <a href="#contact"> contact</a>
             </li>
           </ul>
         </div>
