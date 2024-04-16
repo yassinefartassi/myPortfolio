@@ -36,15 +36,15 @@ const Hero = () => {
           hello world! i'am yassine a MERN stack developper
         </p>
         <div className="my-8">
-          <a
+          {/* <a
             href="/"
             className="px-6 py-3 w-full rounded-xl mr-4 border border-gray-400 hover:bg-gradient-to-br from-orange-500 to-pink-500 text-white hover:border-none"
           >
             Download CV
-          </a>
+          </a> */}
           <a
-            href="/"
-            className="px-6 py-3 w-full rounded-xl  border border-gray-400 hover:bg-gradient-to-br from-orange-500 to-pink-500 text-white hover:border-none"
+            href="#contact"
+            className="px-6 py-3 w-full rounded-xl border border-gray-400 hover:bg-gradient-to-br from-orange-500 to-pink-500 text-white hover:border-none"
           >
             Contact me
           </a>

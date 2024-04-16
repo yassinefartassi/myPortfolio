@@ -7,12 +7,14 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav);
   };
-
+  const closeNav = () => {
+    setNav(!nav);
+  };
   return (
     <div>
-      <div className="bg-black h-[100px] text-gray-400 mx-w-[1200px] mx-auto flex justify-between items-center">
+      <div className="bg-black h-[100px] text-gray-400 mx-w-[1200px] px-10 mx-auto flex justify-between items-center">
         <h1 className="text-3xl font-bold primary-color ml-4">
-          Yassine Fartassi
+          <a href="#">Yassine Fartassi</a>
         </h1>
         <ul className="hidden md:flex">
           <li className="p-5">
@@ -38,13 +40,19 @@ const Navbar = () => {
           <h1 className="text-3xl primary-color ml-4">Yassine Fartassi</h1>
           <ul className="p-8 text-2xl">
             <li className="p-2">
-              <a href="#about"> about</a>
+              <a href="#about" onClick={closeNav}>
+                about
+              </a>
             </li>
             <li className="p-2">
-              <a href="#projects"> work</a>
+              <a href="#projects" onClick={closeNav}>
+                work
+              </a>
             </li>
             <li className="p-2">
-              <a href="#contact"> contact</a>
+              <a href="#contact" onClick={closeNav}>
+                contact
+              </a>
             </li>
           </ul>
         </div>
